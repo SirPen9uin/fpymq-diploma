@@ -426,5 +426,38 @@
 			</div>
 		</footer>
 	</div>
+	<div class="popup-container _hidden">
+		<div class="popup shadow" id="popup">
+			<form class="form-popup">
+				<h2 class="form-title">ваш фидбек</h2>
+				<div class="form-select">
+					<label class="select-group">
+						<span class="select-title">Как часто вы заходите на сайт?</span>
+						<select class="select">
+							<option value="text" selected>Почти каждый день</option>
+							<option value="text">Раз в неделю</option>
+							<option value="text">Раз в месяц</option>
+						</select>
+					</label>
+				</div>
+				<div class="form-radio">
+					<p>Вы подписаны на email рассылку?</p>
+					<div class="form-radio-button"><input type="radio" name="radio" id="radio-yes" value="yes" checked required><label for="radio-yes">Да</label>
+					</div>
+					<div class="form-radio-button">
+						<input type="radio" name="radio" id="radio-no" value="no" required><label for="radio-no">Нет</label>
+					</div>
+				</div>
+				<div class="form-textarea">
+					<label class="form-textarea-title" for="poll-content">
+						Расскажите, какой контент вы бы хотели видеть на нашем сайте?
+					</label>
+					<textarea class="textarea" id="poll-content" cols="30" rows="5" placeholder="Может, быть рецептов?" required></textarea>
+				</div>
+				<button class="button_mail" type="submit">отправить</button>
+				<button class="close" id="popup-close" type="button">х</button>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
