@@ -682,12 +682,13 @@ img {
 	top: 170px;
 	right: 20px;
 	width: 340px;
-	height: 263px;
+	height: auto;
 	border: 3px solid #b59f5b;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	padding-left: 20px;
+	padding-top: 55px;
 	box-sizing: border-box;
 }
 
