@@ -683,6 +683,7 @@ img {
     margin-bottom: -35px;
     text-align: center;
     width: 85%;
+    height: 115%;
 }
 
 .shop-info__text {
@@ -777,168 +778,152 @@ img {
 }
 
 .popup {
-	position: fixed;
-	top: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	opacity: 1;
-	overflow-y: auto;
-	overflow-x: hidden;
-	z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.shadow {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.checked-popup:checked + .popup {
+    display: flex;
 }
 
-.shadow::after {
-	content: "";
-	width: 100%;
-	height: 100%;
-	background-color: rgba(29, 29, 29, 0.6);
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 6;
+.checked-popup {
+    display: none;
+}   
+
+.popup-content {
+    width: 390px;
+    background-color: #ffffff;
+    position: relative;
 }
 
-.form-popup {
-	max-width: 390px;
-	min-width: 200px;
-	min-height: 300px;
-	max-height: 500px;
-	padding: 50px;
-	background: #fff;
-	position: relative;
-	color: #000000;
-	opacity: 1;
-	z-index: 7;
-	font-size: 13px;
+.popup_close-picture {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    cursor: pointer;
 }
 
-.form-title {
-	text-align: center;
-	text-transform: uppercase;
-	padding-bottom: 27px;
-	font-size: 20px;
+.popup-text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 54px 0 0;
+    color: black;
 }
 
-.form-title::after {
-	content: "";
-	background-image: url("../images/line.png");
-	display: block;
-	width: 67px;
-	height: 3px;
-	margin: 0 auto;
-	margin-top: 14px;
+.popup-text::after {
+    border: 3px solid #b59f5b;
+    width: 66px;
+    margin: 10px auto 28px;
+    opacity: 0.4;
+    content: "";
+    display: block;
 }
 
-.select-group .select {
-	display: inline-block;
-	box-sizing: border-box;
-	width: 100%;
-	height: 38px;
-	padding-left: 10px;
-	padding-right: 25px;
-	border: none;
-	color: #878787;
-	background-color: #f4f7f6;
-	font-size: 13px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background-image: url("../svg/form-arrows.svg");
-	background-size: 8px;
-	background-repeat: no-repeat;
-	background-position: right 5px center;
-	margin-bottom: 27px;
-	cursor: pointer;
+.main-buttons {
+    padding: 30px;
 }
 
-.form-radio {
-	margin-bottom: 27px;
+.popup-main {
+    margin: 30px 0;
+    color: black;
 }
 
-.form-radio-button {
-	display: inline-block;
-	font-size: 13px;
+.popup-question-text {
+    font-size: 13px;
+    font-weight: 400;
 }
 
-.form-radio-button label {
-	display: inline-block;
-	cursor: pointer;
-	position: relative;
-	padding-left: 25px;
-	margin-right: 0;
-	line-height: 18px;
+.popup-select {
+    width: 100%;
+    height: 50px;
+    opacity: 0.5;
+    font-size: 13px;
+    padding-left: 19px;
+    background-color: #f4f7f6;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("../svg/form-arrows.svg");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 8px 17px;
 }
 
-.form-radio-button input[type=radio] {
-	display: none;
+.popup-select:hover {
+    border: 1px solid #b59f5b;
 }
 
-.form-radio-button label:before {
-	content: "";
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	left: 0;
-	top: 1px;
-	background-image: url("../svg/form-empty-circle.svg");
-	background-size: 18px;
-	background-repeat: no-repeat;
+.visually-hidden {
+    position: absolute;
+    transform: scale(0);
 }
 
-.form-radio-button input[type=radio]:checked+label:before {
-	background-image: url("../svg/form-circle.svg");
-	background-size: 18px;
-	background-repeat: no-repeat;
+.popup-radio__text {
+    font-size: 13px;
 }
 
-.close {
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	right: -7px;
-	top: -35px;
-	font-size: 30px;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-	background-color: transparent;
+.popup-radio__text::before {
+    content: "";
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-image: url("../svg/form-empty-circle.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.form-textarea {
-	font-size: 13px;
+.popup-radio__circle:checked ~ .popup-radio__text::before {
+    background-image: url("../svg/form-circle.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.textarea {
-	box-sizing: border-box;
-	max-width: 400px;
-	min-width: 100%;
-	min-height: 150px;
-	background-color: #f4f7f6;
-	font-family: inherit;
-	padding: 15px 0 0 15px;
-	font-size: 13px;
-	resize: none;
-	border: none;
+.popup-textarea {
+    width: 290px;
+    height: 131px;
+    background-color: #f4f7f6;
+    padding: 20px;
+    opacity: 0.541;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: "Open Sans";
+    resize: none;
 }
 
-.button_mail {
-	width: 100%;
-	height: 50px;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: bold;
-	color: #eeeeee;
-	background-color: #b59f5b;
-	border: none;
-	cursor: pointer;
-	margin-top: 20px;
+.popup-submit-button {
+    padding: 0;
+    width: 100%;
+    height: 48px;
+    background-color: #b59f5b;
+    border: 0;
+    margin: 0;
+    font-size: 14px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.popup-submit-button:hover {
+    background-color: #323232;
 }
 
 @media (min-width: 1200px) {
